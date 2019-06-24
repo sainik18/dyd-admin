@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, Validators, FormGroup, FormGroupDirective } from '@angular/forms';
 import { Router, ActivatedRoute } from "@angular/router";
+import { userService } from '../user.service';
+const eml = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 @Component({
   selector: 'app-login',
@@ -9,11 +11,25 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-  @ViewChild('f') loginForm: NgForm;
-
+  //@ViewChild('f') loginForm: NgForm;
+  loginForm = new FormGroup({
+    email: new FormControl('', Validators.pattern(eml)),
+    password: new FormControl('', Validators.compose([Validators.minLength(3)]))
+  });
     constructor(private router: Router,
-        private route: ActivatedRoute) { }
+        private route: ActivatedRoute, private userservice: userService) { }
     ngOnInit(){  
+    }
+
+    onLoginSubmit(){
+
+      const logindata = {
+        email: this.loginForm.get('email').value,
+        password: this.loginForm.get('password').value
+    };
+    this.userservice.login(logindata).subscribe( (data) => {
+      console.log(data);
+    })
     }
 
     // On submit button click    
