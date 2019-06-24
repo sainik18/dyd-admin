@@ -17,6 +17,13 @@ import * as $ from 'jquery';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { userService } from './user.service';
+import { QuotesComponent } from './quotes/quotes.component';
+import { DevotionsComponent } from './devotions/devotions.component';
+import { UsersComponent } from './users/users.component';
+import { SettingsComponent } from './settings/settings.component';
+import { ActivityComponent } from './activity/activity.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NewdevotionComponent } from './newdevotion/newdevotion.component';
 
 
 
@@ -27,7 +34,14 @@ import { userService } from './user.service';
         FullLayoutComponent,
         ContentLayoutComponent,
         RegisterComponent,
-        LoginComponent
+        LoginComponent,
+        QuotesComponent,
+        DevotionsComponent,
+        UsersComponent,
+        SettingsComponent,
+        ActivityComponent,
+        DashboardComponent,
+        NewdevotionComponent
     ],
     imports: [
         BrowserAnimationsModule,

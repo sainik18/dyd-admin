@@ -11,7 +11,6 @@ const eml = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[
 })
 export class LoginComponent implements OnInit {
 
-  //@ViewChild('f') loginForm: NgForm;
   loginForm = new FormGroup({
     email: new FormControl('', Validators.pattern(eml)),
     password: new FormControl('', Validators.compose([Validators.minLength(3)]))

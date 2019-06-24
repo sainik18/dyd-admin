@@ -10,6 +10,13 @@ import { CONTENT_ROUTES } from "./shared/routes/content-layout.routes";
 import { AuthGuard } from './shared/auth/auth-guard.service';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { QuotesComponent } from './quotes/quotes.component';
+import { DevotionsComponent } from './devotions/devotions.component';
+import { UsersComponent } from './users/users.component';
+import { ActivityComponent } from './activity/activity.component';
+import { SettingsComponent } from './settings/settings.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NewdevotionComponent } from './newdevotion/newdevotion.component';
 
 const appRoutes: Routes = [
   // {
@@ -20,18 +27,6 @@ const appRoutes: Routes = [
   // { path: '', component: FullLayoutComponent, data: { title: 'full Views' }, children: Full_ROUTES, canActivate: [AuthGuard] },
    //{ path: '', component: ContentLayoutComponent, data: { title: 'content Views' }, children: CONTENT_ROUTES, canActivate: [AuthGuard] },
   {
-    path: '',
-    component: FullLayoutComponent,
-    data: { title: 'Login' },
-    children: [
-      {
-        path: 'welcome',
-        //loadChildren: './changelog/changelog.module#ChangeLogModule'
-        component: LoginComponent
-      }
-    ]
-  },
-  {
     path: 'login',
     component: LoginComponent,
     data: { title: 'Login' }
@@ -40,7 +35,48 @@ const appRoutes: Routes = [
     path: 'register',
     component: RegisterComponent,
     data: { title: 'content Views' }
+  },
+  {
+    path: '',
+    component: FullLayoutComponent,
+    data: { title: 'Login' },
+    children: [
+      {
+        path: '',
+        //loadChildren: './changelog/changelog.module#ChangeLogModule'
+        component: DashboardComponent
+      },
+      {
+        path: 'newdevotion',
+        //loadChildren: './changelog/changelog.module#ChangeLogModule'
+        component: NewdevotionComponent
+      },
+      {
+        path: 'devotion',
+        //loadChildren: './changelog/changelog.module#ChangeLogModule'
+        component: DevotionsComponent
+      },
+      {
+        path: 'users',
+        component: UsersComponent
+      },
+      {
+        path: 'activity',
+        component: ActivityComponent
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent
+      }
+    ]
+  },
+  {
+    path: '**',
+    redirectTo: ''
+    //component: RegisterComponent,
+    //data: { title: 'content Views' }
   }
+
 ];
 
 @NgModule({
