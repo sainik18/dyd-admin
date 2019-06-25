@@ -29,14 +29,14 @@
                               </tr>
                           </thead>
                           <tbody>
-                              <tr>
-                                  <td>1</td>
-                                  <td>Top</td>
-                                  <td>Bib</td>
-                                  <td>Dev</td>
-                                  <td>Pra</td>
-                                  <td>Con</td>
-                                  <td>Dat</td>
+                              <tr *ngFor="let row of data; let i = index">
+                                  <td>{{i+1}}</td>
+                                  <td>{{row.topic}}</td>
+                                  <td>{{(row.bible_verse.length > 10)? (row.bible_verse | slice:0:10)+'...': row.bible_verse }}</td>
+                                  <td>{{row.devotion}}</td>
+                                  <td>{{row.prayer}}</td>
+                                  <td>{{row.confession}}</td>
+                                  <td>{{row.quote_date}}</td>
                                   <td>
                                       <a class="success p-0" data-original-title="" title="">
                                           <i class="fa fa-pencil font-medium-3 mr-2"></i>

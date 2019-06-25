@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { userService } from 'app/user.service';
 
 @Component({
   selector: 'app-devotions',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./devotions.component.scss']
 })
 export class DevotionsComponent implements OnInit {
-
-  constructor() { }
+  data = [];
+  constructor(private userservice: userService) { }
 
   ngOnInit() {
+    let params = {
+      lang: 'en'
+    }
+
+    this.userservice.getdevotions(params).subscribe( (data) => {
+      console.log(data);
+      this.data = data.data;
+    })
   }
 
 }

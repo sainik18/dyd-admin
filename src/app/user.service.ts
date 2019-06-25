@@ -10,4 +10,8 @@ export class userService {
     login(data): Observable<any> {
         return this.http.post(APP_CONSTANTS.login_admin, data);
     }
+
+    getdevotions(data): Observable<any> {
+        return this.http.post(APP_CONSTANTS.getDevotions, data);
+    }
 }
