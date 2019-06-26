@@ -31,22 +31,22 @@
                           <tbody>
                               <tr *ngFor="let row of data; let i = index">
                                   <td>{{i+1}}</td>
-                                  <td>{{row.topic}}</td>
-                                  <td>{{(row.bible_verse.length > 10)? (row.bible_verse | slice:0:10)+'...': row.bible_verse }}</td>
-                                  <td>{{row.devotion}}</td>
-                                  <td>{{row.prayer}}</td>
-                                  <td>{{row.confession}}</td>
+                                  <td [title]="row.topic">{{(row.topic.length > 30)? (row.topic | slice:0:30)+'...': row.topic }}</td>
+                                  <td [title]="row.bible_verse">{{(row.bible_verse.length > 10)? (row.bible_verse | slice:0:10)+'...': row.bible_verse }}</td>
+                                  <td [title]="row.devotion">{{(row.devotion.length > 30)? (row.devotion | slice:0:30)+'...': row.devotion }}</td>
+                                  <td [title]="row.prayer">{{(row.prayer.length > 30)? (row.prayer | slice:0:30)+'...': row.prayer }}</td>
+                                  <td [title]="row.confession">{{(row.confession.length > 30)? (row.confession | slice:0:30)+'...': row.confession }}</td>
                                   <td>{{row.quote_date}}</td>
-                                  <td>
-                                      <a class="success p-0" data-original-title="" title="">
-                                          <i class="fa fa-pencil font-medium-3 mr-2"></i>
-                                      </a>
-                                      <!-- <a class="info p-0" data-original-title="" title="">
-                                          <i class="fa fa-check font-medium-3 mr-2"></i>
-                                      </a> -->
-                                      <a class="danger p-0" data-original-title="" title="">
-                                          <i class="fa fa-trash-o font-medium-3 mr-2"></i>
-                                      </a>
+                                  <td style="width:115px">
+                                    <a (click)="viewDevotion(content, row._id)" class="info p-0" data-original-title="" title="">
+                                        <i class="fa fa-file-o font-medium-1 mr-2"></i>
+                                    </a>
+                                    <a class="success p-0" data-original-title="" title="">
+                                        <i class="fa fa-pencil font-medium-3 mr-2"></i>
+                                    </a>
+                                    <a class="danger p-0" data-original-title="" title="">
+                                        <i class="fa fa-trash-o font-medium-3 mr-2"></i>
+                                    </a>
                                   </td>
                               </tr>
                               
@@ -59,3 +59,24 @@
   </div>
 </section>
 <!--Extended Table Ends-->
+
+<!-- modal popup start -->
+<ng-template #content let-c="close" let-d="dismiss" style="width:80%">
+    <div class="modal-header">
+        <h4 class="modal-title m-auto">Post Date: {{modalData[0].quote_date}}</h4>
+        <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p><strong>Topic:</strong> {{modalData[0].topic}}</p>
+        <p><strong>Bible Verse:</strong> {{modalData[0].bible_verse}}</p>
+        <p><strong>Devotion:</strong> {{modalData[0].devotion}}</p>
+        <p><strong>Prayer:</strong> {{modalData[0].prayer}}</p>
+        <p><strong>Confession:</strong> {{modalData[0].confession}}</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger btn-raised" (click)="c('Close click')">Close</button>
+    </div>
+</ng-template>
+<!-- modal popup end -->

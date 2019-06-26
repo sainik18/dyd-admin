@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     };
     this.userservice.login(logindata).subscribe( (data) => {
       console.log(data);
-    })
+    });
     }
 
     // On submit button click    

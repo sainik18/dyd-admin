@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { userService } from 'app/user.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-devotions',
@@ -8,7 +10,8 @@ import { userService } from 'app/user.service';
 })
 export class DevotionsComponent implements OnInit {
   data = [];
-  constructor(private userservice: userService) { }
+  modalData : any;
+  constructor(private userservice: userService, private modalService: NgbModal) { }
 
   ngOnInit() {
     let params = {
@@ -19,6 +22,14 @@ export class DevotionsComponent implements OnInit {
       console.log(data);
       this.data = data.data;
     })
+  }
+
+  viewDevotion(content, _id){
+    this.modalData = this.data.filter(row => row._id == _id);
+    console.log(this.modalData);
+    this.modalService.open(content).result.then((result) => {
+  });
+    console.log(_id);
   }
 
 }
