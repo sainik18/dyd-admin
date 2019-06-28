@@ -13,33 +13,6 @@
                     <i class="ft-more-vertical"></i>
                 </a>
             </span>
-            <a href="javascript:;" class="mr-2 display-inline-block" id="navbar-fullscreen" appToggleFullscreen (click)="ToggleClass()">
-                <i class="{{toggleClass}} blue-grey darken-4"></i>
-                <p class="d-none">fullscreen</p>
-            </a>
-            <a class="ml-2 display-inline-block">
-                <i class="ft-shopping-cart blue-grey darken-4"></i>
-                <p class="d-none">cart</p>
-            </a>
-            <div ngbDropdown placement="bottom-left" class="ml-2 display-inline-block">
-                <a class="nav-link position-relative" id="apps" ngbDropdownToggle>
-                    <i class="ft-edit blue-grey darken-4"></i>
-                    <span class="mx-1 blue-grey darken-4 text-bold-400">Apps</span>
-                </a>
-                <div ngbDropdownMenu aria-labelledby="apps" class="apps">
-                    <div class="arrow_box">
-                        <a class="dropdown-item py-1" href="javascript:;">
-                            <span>Chat</span>
-                        </a>
-                        <a class="dropdown-item py-1" href="javascript:;">
-                            <span>TaskBoard</span>
-                        </a>
-                        <a class="dropdown-item py-1" href="javascript:;">
-                            <span>Calendar</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="navbar-container">
             <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
@@ -61,59 +34,45 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item mt-1" ngbDropdown placement="bottom-right">
-                        <a class="nav-link position-relative" id="dropdownBasic2" ngbDropdownToggle>
-                            <i class="ft-bell blue-grey darken-4"></i>
-                            <span class="notification badge badge-pill badge-danger">4</span>
-                            <p class="d-none">Notifications</p>
+                    <li class="nav-item mt-1 text-left" ngbDropdown placement="bottom-right">
+                        <a class="nav-link position-relative" id="dropdownLang" ngbDropdownToggle>
+                            <i class="ft-flag blue-grey darken-4"></i>
+                            <p class="d-none">Language</p>
                         </a>
-                        <div ngbDropdownMenu aria-labelledby="dropdownBasic2" class="notification-dropdown">
+                        <div ngbDropdownMenu aria-labelledby="dropdownLang" class="dropdownLang">
                             <div class="arrow_box_right">
-                                <div class="noti-list">
-                                    <a class="dropdown-item noti-container py-2">
-                                        <i class="ft-share info float-left d-block font-medium-4 mt-2 mr-2"></i>
-                                        <span class="noti-wrapper">
-                                            <span class="noti-title line-height-1 d-block text-bold-400 info">New Order Received</span>
-                                            <span class="noti-text">Lorem ipsum dolor sit ametitaque in, et!</span>
-                                        </span>
-                                    </a>
-                                    <a class="dropdown-item noti-container py-2">
-                                        <i class="ft-save warning float-left d-block font-medium-4 mt-2 mr-2"></i>
-                                        <span class="noti-wrapper">
-                                            <span class="noti-title line-height-1 d-block text-bold-400 warning">New User Registered</span>
-                                            <span class="noti-text">Lorem ipsum dolor sit ametitaque in </span>
-                                        </span>
-                                    </a>
-                                    <a class="dropdown-item noti-container py-2">
-                                        <i class="ft-repeat danger float-left d-block font-medium-4 mt-2 mr-2"></i>
-                                        <span class="noti-wrapper">
-                                            <span class="noti-title line-height-1 d-block text-bold-400 danger">New Order Received</span>
-                                            <span class="noti-text">Lorem ipsum dolor sit ametest?</span>
-                                        </span>
-                                    </a>
-                                    <a class="dropdown-item noti-container py-2">
-                                        <i class="ft-shopping-cart success float-left d-block font-medium-4 mt-2 mr-2"></i>
-                                        <span class="noti-wrapper">
-                                            <span class="noti-title line-height-1 d-block text-bold-400 success">New Item In Your Cart</span>
-                                            <span class="noti-text">Lorem ipsum dolor sit ametnatus aut.</span>
-                                        </span>
-                                    </a>
-                                    <a class="dropdown-item noti-container py-2">
-                                        <i class="ft-heart info float-left d-block font-medium-4 mt-2 mr-2"></i>
-                                        <span class="noti-wrapper">
-                                            <span class="noti-title line-height-1 d-block text-bold-400 info">New Sale</span>
-                                            <span class="noti-text">Lorem ipsum dolor sit ametnatus aut.</span>
-                                        </span>
-                                    </a>
-                                    <a class="dropdown-item noti-container py-2">
-                                        <i class="ft-box warning float-left d-block font-medium-4 mt-2 mr-2"></i>
-                                        <span class="noti-wrapper">
-                                            <span class="noti-title line-height-1 d-block text-bold-400 warning">Order Delivered</span>
-                                            <span class="noti-text">Lorem ipsum dolor sit ametnatus aut.</span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <a class="noti-footer primary text-center d-block border-top border-top-blue-grey border-top-lighten-4 text-bold-400 py-1">Read All Notifications</a>
+                                <a class="dropdown-item py-1 lang" href="javascript:;" (click)="ChangeLanguage('English')">
+                                    <img src="./assets/img/flags/us.png" alt="English" class="langimg">
+                                    <span>English</span>
+                                </a>
+                                <a class="dropdown-item py-1 lang" href="javascript:;" (click)="ChangeLanguage('Spanish')">
+                                    <img src="./assets/img/flags/es.png" alt="Spanish" class="langimg">
+                                    <span>Spanish</span>
+                                </a> 
+                                <a class="dropdown-item py-1 lang" href="javascript:;" (click)="ChangeLanguage('French')">
+                                    <img src="./assets/img/flags/fr.png" alt="French" class="langimg">
+                                    <span>French</span>
+                                </a> 
+                                <a class="dropdown-item py-1 lang" href="javascript:;" (click)="ChangeLanguage('Hausa')">
+                                    <img src="./assets/img/flags/ha.png" alt="Hausa" class="langimg">
+                                    <span>Hausa</span>
+                                </a> 
+                                <a class="dropdown-item py-1 lang" href="javascript:;" (click)="ChangeLanguage('Yoruba')">
+                                    <img src="./assets/img/flags/yo.png" alt="Yoruba" class="langimg">
+                                    <span>Yoruba</span>
+                                </a> 
+                                <a class="dropdown-item py-1 lang" href="javascript:;" (click)="ChangeLanguage('Igbo')">
+                                    <img src="./assets/img/flags/ig.png" alt="Igbo" class="langimg">
+                                    <span>Igbo</span>
+                                </a> 
+                                <a class="dropdown-item py-1 lang" href="javascript:;" (click)="ChangeLanguage('Portuguese')">
+                                    <img src="./assets/img/flags/br.png" alt="Portuguese" class="langimg">
+                                    <span>Portuguese</span>
+                                </a> 
+                                <a class="dropdown-item py-1 lang" href="javascript:;" (click)="ChangeLanguage('German')">
+                                    <img src="./assets/img/flags/de.png" alt="German" class="langimg">
+                                    <span>German</span>
+                                </a>
                             </div>
                         </div>
                     </li>
