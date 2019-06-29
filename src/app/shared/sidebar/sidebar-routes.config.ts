@@ -6,7 +6,7 @@ export const ROUTES: RouteInfo[] = [
         path: '/dashboard', title: 'dashboard', icon: 'icon-book-open', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
     },
     {
-        path: '/newdevotion', title: 'newdevotion', icon: 'icon-book-open', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+        path: '/newdevotion', title: 'New Devotion', icon: 'icon-book-open', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
     },
     {
         path: '/devotion', title: 'Devotion', icon: 'icon-book-open', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
