@@ -8,11 +8,10 @@
         </div>
         <div class="card-body">
           <div class="px-3">
-            <form class="form" [formGroup]="devotionForm" (ngSubmit)="onDevotionSubmit()">
+            <form class="form" [formGroup]="devotionForm" (ngSubmit)="updateDevotion()">
               <div class="form-body">
                 <div class="row">
                     <div class="col-md-6">
-                      {{devotionForm.hasError('required','lang')}}
                         <div class="form-group">
                           <label for="projectinput5" [ngClass]="{'red':devotionForm.hasError('minlength','lang')}">Select Language</label>
                           <select name="interested" class="form-control" required formControlName="lang">
