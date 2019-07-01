@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from "./shared/shared.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -24,6 +25,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { ActivityComponent } from './activity/activity.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewdevotionComponent } from './newdevotion/newdevotion.component';
+import { EditdevotionComponent } from './editdevotion/editdevotion.component';
 
 
 
@@ -41,11 +43,13 @@ import { NewdevotionComponent } from './newdevotion/newdevotion.component';
         SettingsComponent,
         ActivityComponent,
         DashboardComponent,
-        NewdevotionComponent
+        NewdevotionComponent,
+        EditdevotionComponent
     ],
     imports: [
         BrowserAnimationsModule,
         HttpClientModule,
+        SnotifyModule.forRoot(),
         AppRoutingModule,
         SharedModule,
         FormsModule,
@@ -55,7 +59,9 @@ import { NewdevotionComponent } from './newdevotion/newdevotion.component';
     providers: [
         AuthService,
         AuthGuard,
-        userService
+        userService,
+        { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
+        SnotifyService,
     ],
     bootstrap: [AppComponent]
 })

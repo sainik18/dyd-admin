@@ -14,4 +14,11 @@ export class userService {
     getdevotions(data): Observable<any> {
         return this.http.post(APP_CONSTANTS.getDevotions, data);
     }
+
+    insertDevotion(data): Observable<any> {
+        return this.http.post(APP_CONSTANTS.insertDevotions, data);
+    }
+    getDevotionById(data): Observable<any> {
+        return this.http.post(APP_CONSTANTS.getDevotionById, data);
+    }
 }

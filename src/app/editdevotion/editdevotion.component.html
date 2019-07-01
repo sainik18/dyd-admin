@@ -1,0 +1,96 @@
+<div class="row">
+  <div class="col-md-10 m-auto">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-wrap bar-success">
+            <h4 class="card-title" id="basic-layout-form">Edit Devotion</h4>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="px-3">
+            <form class="form" [formGroup]="devotionForm" (ngSubmit)="onDevotionSubmit()">
+              <div class="form-body">
+                <div class="row">
+                    <div class="col-md-6">
+                      {{devotionForm.hasError('required','lang')}}
+                        <div class="form-group">
+                          <label for="projectinput5" [ngClass]="{'red':devotionForm.hasError('minlength','lang')}">Select Language</label>
+                          <select name="interested" class="form-control" required formControlName="lang">
+                              <option value="" selected="" disabled="">Select Language</option>
+                            <option value="English">English</option>
+                            <option value="Spanish">Spanish</option>
+                            <option value="French">French</option>
+                            <option value="Hausa">Hausa</option>
+                            <option value="Yoruba">Yoruba</option>
+                            <option value="Igbo">Igbo</option>
+                            <option value="Portuguese">Portuguese</option>
+                            <option value="German">German</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="issueinput3" [ngClass]="{'red':devotionForm.hasError('minlength','quote_date')}">Post Date</label>
+                            <input type="date" class="form-control" name="postDate" data-toggle="tooltip" data-trigger="hover" data-placement="top"
+                             data-title="Date Opened" required formControlName="quote_date">
+                          </div>
+                        </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="projectinput1" [ngClass]="{'red':devotionForm.hasError('minlength','topic')}">Topic</label>
+                      <input type="text" class="form-control" name="topic" required formControlName="topic">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="projectinput2" [ngClass]="{'red':devotionForm.hasError('minlength','bible_verse')}">Bible Verse</label>
+                      <input type="text" class="form-control" name="bibleVerse" required formControlName="bible_verse">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="projectinput8" [ngClass]="{'red':devotionForm.hasError('minlength','devotion')}">Write Devotion Here</label>
+                        <textarea rows="5" class="form-control" name="devotion" required formControlName="devotion"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="projectinput8" [ngClass]="{'red':devotionForm.hasError('minlength','prayer')}">Write Prayer Here</label>
+                        <textarea rows="5" class="form-control" name="prayer" required formControlName="prayer"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="projectinput8" [ngClass]="{'red':devotionForm.hasError('minlength','confession')}">Write Confession Here</label>
+                          <textarea rows="5" class="form-control" name="confession" required formControlName="confession"></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+
+              <div class="form-actions text-center">
+                <!-- <button type="button" class="btn btn-raised btn-danger mr-1">
+                  <i class="icon-trash"></i> Cancel
+                </button> -->
+                <button type="submit" class="btn btn-raised btn-success" [disabled]="!devotionForm.valid">
+                  <i class="icon-note"></i> Upadate Devotion
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

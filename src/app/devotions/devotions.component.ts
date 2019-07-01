@@ -11,16 +11,20 @@ import { ThrowStmt } from '@angular/compiler';
 export class DevotionsComponent implements OnInit {
   data = [];
   modalData : any;
+  language = localStorage.getItem('lang');
   constructor(private userservice: userService, private modalService: NgbModal) { }
 
   ngOnInit() {
     let params = {
-      lang: 'en'
+      lang: localStorage.getItem('lang')
     }
 
     this.userservice.getdevotions(params).subscribe( (data) => {
       console.log(data);
-      this.data = data.data;
+      if(data.status){
+        this.data = data.data;
+      }
+      
     })
   }
 
@@ -29,7 +33,6 @@ export class DevotionsComponent implements OnInit {
     console.log(this.modalData);
     this.modalService.open(content).result.then((result) => {
   });
-    console.log(_id);
   }
 
 }

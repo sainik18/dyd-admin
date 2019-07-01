@@ -1,7 +1,7 @@
 <!--Extended Table starts-->
 <div class="row">
   <div class="col-12">
-      <div class="content-header">Quotes</div>
+      <div class="content-header">Devotions</div>
   </div>
 </div>
 <section id="extended">
@@ -10,7 +10,7 @@
           <div class="card">
               <div class="card-header">
                       <div class="card-title-wrap bar-success">
-                  <!-- <h4 class="card-title">Quotes</h4> -->
+                  <h4 class="card-title text-right">Selected Langauge: {{language}}</h4>
                       </div>
               </div>
               <div class="card-body">
@@ -28,7 +28,7 @@
                                   <th></th>
                               </tr>
                           </thead>
-                          <tbody>
+                          <tbody *ngIf="data?.length > 0">
                               <tr *ngFor="let row of data; let i = index">
                                   <td>{{i+1}}</td>
                                   <td [title]="row.topic">{{(row.topic.length > 30)? (row.topic | slice:0:30)+'...': row.topic }}</td>
@@ -41,7 +41,7 @@
                                     <a (click)="viewDevotion(content, row._id)" class="info p-0" data-original-title="" title="">
                                         <i class="fa fa-file-o font-medium-1 mr-2"></i>
                                     </a>
-                                    <a class="success p-0" data-original-title="" title="">
+                                    <a class="success p-0" [routerLink]="['/editdevotion/'+row._id]" data-original-title="" title="">
                                         <i class="fa fa-pencil font-medium-3 mr-2"></i>
                                     </a>
                                     <a class="danger p-0" data-original-title="" title="">
@@ -52,6 +52,9 @@
                               
                           </tbody>
                       </table>
+                      <div *ngIf="data?.length == 0">
+                          <h4 class="text-center">No Devotions Found</h4>
+                      </div>
                   </div>
               </div>
           </div>

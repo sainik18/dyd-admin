@@ -17,6 +17,7 @@ import { ActivityComponent } from './activity/activity.component';
 import { SettingsComponent } from './settings/settings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewdevotionComponent } from './newdevotion/newdevotion.component';
+import { EditdevotionComponent } from './editdevotion/editdevotion.component';
 
 const appRoutes: Routes = [
   // {
@@ -48,8 +49,11 @@ const appRoutes: Routes = [
       },
       {
         path: 'newdevotion',
-        //loadChildren: './changelog/changelog.module#ChangeLogModule'
         component: NewdevotionComponent
+      },
+      {
+        path: 'editdevotion/:id',
+        component: EditdevotionComponent
       },
       {
         path: 'devotion',
