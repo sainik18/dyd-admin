@@ -38,11 +38,11 @@ export class EditdevotionComponent implements OnInit {
         }
     });
     return {
-        bodyMaxLength: 80,
-        titleMaxLength: 15,
+        bodyMaxLength: 50,
+        titleMaxLength: 50,
         backdrop: -1,
-        position: SnotifyPosition.rightBottom,
-        timeout: 3000,
+        position: SnotifyPosition.rightTop,
+        timeout: 5000,
         showProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true
