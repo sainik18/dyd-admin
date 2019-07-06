@@ -26,8 +26,7 @@ import { ActivityComponent } from './activity/activity.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewdevotionComponent } from './newdevotion/newdevotion.component';
 import { EditdevotionComponent } from './editdevotion/editdevotion.component';
-
-
+import { ChartistModule} from 'ng-chartist';
 
 
 @NgModule({
@@ -54,7 +53,8 @@ import { EditdevotionComponent } from './editdevotion/editdevotion.component';
         SharedModule,
         FormsModule,
         ReactiveFormsModule,
-        NgbModule.forRoot()
+        NgbModule.forRoot(),
+        ChartistModule
     ],
     providers: [
         AuthService,

@@ -1,3 +1,67 @@
-<p>
-  dashboard works!
-</p>
+<!--Statistics cards Starts-->
+<div class="row">
+  <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+    <div class="card bg-white">
+      <div class="card-body">
+        <div class="card-block pt-2 pb-0">
+          <div class="media">
+            <div class="media-body text-left">
+              <h4 class="font-medium-5 card-title mb-0">$5789</h4>
+              <span>Total Visits</span>
+            </div>
+            <div class="media-right text-right">
+              <i class="icon-cup font-large-1 primary"></i>
+            </div>
+          </div>
+        </div>
+        <div id="Widget-area-chart1" class="height-150 WidgetAreaChart1 mb-2">
+          <x-chartist class="" [data]="WidgetAreaChart1.data" [type]="WidgetAreaChart1.type" [options]="WidgetAreaChart1.options" [responsiveOptions]="WidgetAreaChart1.responsiveOptions" [events]="WidgetAreaChart1.events">
+          </x-chartist>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+    <div class="card bg-white">
+      <div class="card-body">
+        <div class="card-block pt-2 pb-0">
+          <div class="media">
+            <div class="media-body text-left">
+              <h4 class="font-medium-5 card-title mb-0">$4567</h4>
+              <span>Total Sales</span>
+            </div>
+            <div class="media-right text-right">
+              <i class="icon-wallet font-large-1 warning"></i>
+            </div>
+          </div>
+        </div>
+        <div id="Widget-area-chart2" class="height-150 WidgetAreaChart2 mb-2">
+          <x-chartist class="" [data]="WidgetAreaChart2.data" [type]="WidgetAreaChart2.type" [options]="WidgetAreaChart2.options" [responsiveOptions]="WidgetAreaChart2.responsiveOptions" [events]="WidgetAreaChart2.events">
+          </x-chartist>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+    <div class="card bg-white">
+      <div class="card-body">
+        <div class="card-block pt-2 pb-0">
+          <div class="media">
+            <div class="media-body text-left">
+              <h4 class="font-medium-5 card-title mb-0">$9822</h4>
+              <span>Total Value</span>
+            </div>
+            <div class="media-right text-right">
+              <i class="icon-basket-loaded font-large-1 success"></i>
+            </div>
+          </div>
+        </div>
+        <div id="Widget-area-chart3" class="height-150 WidgetAreaChart3 mb-2">
+          <x-chartist class="" [data]="WidgetAreaChart3.data" [type]="WidgetAreaChart3.type" [options]="WidgetAreaChart3.options" [responsiveOptions]="WidgetAreaChart3.responsiveOptions" [events]="WidgetAreaChart3.events">
+          </x-chartist>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Statistics cards Ends-->
