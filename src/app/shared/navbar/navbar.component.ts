@@ -26,4 +26,9 @@ export class NavbarComponent {
       location.reload()
     }
   }
+
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['/login']);
+  }
 }
