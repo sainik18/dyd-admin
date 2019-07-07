@@ -1,12 +1,14 @@
+// document font size
 html {
   font-size: $font-size-root;
 }
 
+// Body styling
 body {
   font-family: $font-family-content;
   font-weight: 300;
   line-height: 1.5em;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(97, 97, 97, 0.87);
   min-height: 100vh;
   &.inverse {
     background: #333333;
@@ -26,6 +28,7 @@ body {
   }
 }
 
+// wrapper
 .wrapper{
 
     &.wrapper-full-page{
@@ -34,20 +37,25 @@ body {
     }
 }
 
+// content wrapper
 .content-wrapper{
   padding:0 15px;
 }
 
+// headings
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: $font-family-base;
   font-weight: 300;
   line-height: 1.15em;
+  color: #454545;
 }
 
+// serif fonts
 .serif-font{
     font-family: $font-family-sans-serif;
 }
 
+// Page header
 .page-header {
     height: 60vh;
     background-position: center center;
@@ -59,6 +67,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     border-bottom-right-radius: 6px;
 }
 
+// Anchor
 a{
   color: theme-color("primary");
   &:hover,
@@ -74,6 +83,7 @@ a{
   }
 }
 
+// Paragraph
 p{
   font-size: 1rem;
   letter-spacing: 0.3px;

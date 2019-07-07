@@ -1,5 +1,6 @@
 // This needs review, including colors: https://www.google.com/design/spec/style/typography.html#typography-styles
 
+// Headings
 h1, .h1 {
     font-size: $h1-font-size;
 }
@@ -20,10 +21,12 @@ h6, .h6{
     font-weight: 300;
 }
 
+small
 small, .small{
   font-size: 90%;
 }
 
+// Blockquote
 blockquote, .blockquote{
   padding: 10px 20px;
   margin: 0 0 20px;
@@ -42,6 +45,7 @@ blockquote, .blockquote{
   }
 }
 
+// Blockquote reverse, pull-right
 .blockquote-reverse, blockquote.pull-right{
   padding-right: 15px;
   padding-left: 0;
@@ -50,20 +54,24 @@ blockquote, .blockquote{
   text-align: right;
 }
 
+// Li, DD
 li,dd{
   line-height: 2rem;
 }
 
+// Title
 h2.title{
     margin-bottom: $margin-base * 2;
 }
 
+// Description
 .description,
 .card-description,
 .footer-big p{
     color: color("gray");
 }
 
+// Text colors
 .text-warning {
   color: theme-color("warning") !important;
 }

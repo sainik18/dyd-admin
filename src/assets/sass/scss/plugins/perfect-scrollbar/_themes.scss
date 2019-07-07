@@ -21,3 +21,12 @@ $ps-theme-default: (
 .ps-container {
   @include ps-container($ps-theme-default);
 }
+
+.ps-container {
+  > .ps-scrollbar-y-rail{
+    width: 5px;
+    > .ps-scrollbar-y{
+      width: 5px;
+    }
+  }
+}

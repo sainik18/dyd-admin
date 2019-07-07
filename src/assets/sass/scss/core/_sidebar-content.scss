@@ -1,8 +1,10 @@
+// Main Wrapper
 .wrapper{
     position: relative;
     top: 0;
     height: 100vh;
 
+    // Content Header
     .content-header{
         font-weight: 400;
         letter-spacing: 0.5px;
@@ -18,6 +20,7 @@
         font-size: 0.9rem;
     }
 
+    // Collapsed Navigation
     &.nav-collapsed{
         .app-sidebar{
             width:60px;
@@ -68,6 +71,7 @@
         }
     }
 
+    // Collapsed Sidebar Menu
     &.menu-collapsed{
         .app-sidebar:not(:hover),.off-canvas-sidebar:not(:hover){
             .navigation li{
@@ -116,6 +120,7 @@
                     li.nav-collapsed-open{
                         a{
                             @include gradient-directional(#fc00ff, #00dbde);
+                            color: $white;
                             i{
                                 color: $white !important;
                             }
@@ -126,6 +131,7 @@
         }
     }
 
+    // Sidebar Menu Animation
     &.menu-animation{
         .app-sidebar:not(:hover),.off-canvas-sidebar:not(:hover){
             .navigation li{
@@ -136,10 +142,46 @@
                     }
                 }
             }
-        }   
+            // Menu anchor colors
+            &[data-background-color="white"]{
+                @include set-active-gradient-color(#fc00ff, #00dbde);
+                @include set-active-anchor-color($black);
+            }
+        }
+        .app-sidebar:hover,.off-canvas-sidebar:hover{
+            &[data-background-color="white"]{
+                .navigation{
+                    li.nav-collapsed-open{
+                        a{
+                            color: $black;
+                            i{
+                                color: $black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .app-sidebar,.off-canvas-sidebar{
+            &:not([data-background-color="white"]){
+                &:not(:hover){
+                    @include set-active-anchor-color(#FF4961);
+                }
+            }
+            &[data-background-color="white"]{
+                .navigation{
+                    li.nav-collapsed-open{
+                        >a{
+                            background: rgba(200, 200, 200, 0.2);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
+// Navbar
 .bootstrap-navbar {
     position: absolute;
     top: 0;
@@ -153,6 +195,8 @@
     background-size: cover;
     background-position: center center;
 }
+
+// Sidebar Menu
 .app-sidebar,
 .off-canvas-sidebar{
     font-family: $font-family-base;
@@ -170,17 +214,21 @@
     white-space: nowrap;
     visibility: visible;
 
+    // Hide Animation
     &.hide-sidebar{
         transition: transform .4s cubic-bezier(.25,.8,.25,1);
         transform: translate3d(-100%,0,0);
     }
 
+    // Menu Sidebar Content
     .sidebar-content{
         position: relative;
         height: calc(100vh - 90px);
         overflow: auto;
         z-index: 4;
     }
+
+    // Logo Image
     .logo-img{
         width: 38px;
         display: inline-block;
@@ -190,6 +238,7 @@
         }
     }
 
+    // Settings
     .user-settings-wrap{
         padding: 20px 0;
         border-top: 1px solid rgba(200,200,200, 0.3);
@@ -200,6 +249,7 @@
         }
     }
 
+    // Main Navigation
     .navigation{
         margin-bottom: 0;
         padding-left: 0;
@@ -227,6 +277,9 @@
                 }
                 > a{
                     margin-bottom: 0;
+                    span.menu-title{
+                        font-size: 0.95rem;
+                    }
                 }
                 .has-sub{
                     &.open{
@@ -242,7 +295,7 @@
                                 border-color: #fff;
                                 position: absolute;
                                 left: 46px;
-                                top: 23px;
+                                top: 21px;
                                 transform: translate(-10px, -50%);
                                 opacity: 1;
                                 transition: all 0.2s ease;
@@ -251,6 +304,11 @@
                         &:hover > a{
                             background: rgba(200, 200, 200, 0.2);
                         }
+                    }
+                }
+                a{
+                    span{
+                        font-size: 0.85rem;
                     }
                 }
             }
@@ -293,13 +351,22 @@
                     }
                     span{
                         font-weight: 400;
+                        font-size: 0.85rem;
                     }
                 }
                 &:hover > a{
                     background: #FFFFFF;
                 }
             }
-
+            
+            // Badge 
+            a{
+                position: relative;
+                span.badge{
+                    position: absolute;
+                    right: 3rem;
+                }
+            }
             
             > a{
                 display: block;
@@ -331,7 +398,8 @@
                 li{
                     a{
                         display: block;
-                        padding: 7px 18px 7px 55px;
+                        padding: 5px 18px 5px 55px;
+                        margin: 8px 13px;
                     }
                 }
             }
@@ -354,17 +422,8 @@
             &:hover > a{
                 background: #FFFFFF;
             }
-            /* ~.nav-collapsed-open{
-                > a{
-                    background-color: trasparent !important;
-                    >i{
-                        color: $white;
-                    }
-                }
-            } */
         }
         
-
         .menu-title{
             margin: 0;
             font-size: 0.95rem;
@@ -395,6 +454,7 @@
         }
     }
 
+    // Sidebar Menu Background Color & Image
     .sidebar-background{
         position: absolute;
         z-index: 1;
@@ -418,6 +478,7 @@
         }
     }
 
+    // Logo
     .logo{
         position: relative;
         padding: 18px 15px 18px 10px;
@@ -445,6 +506,7 @@
         }
     }
 
+    // Sidebar menu overlay
     &:after,
     &:before{
         display: block;
@@ -457,10 +519,12 @@
         z-index: 2;
     }
 
+    // Sidebar menu overlay opacity
     &:before{
         opacity: .33;
     }
 
+    // Sidebar menu overlay z-index & opacity
     &:after{
        z-index: 3;
        opacity: 1;
@@ -561,6 +625,7 @@
     }
 }
 
+// Sidebar Menu Header
 .sidebar-header{
     a.nav-toggle{
         display: inline-block;
@@ -586,26 +651,15 @@
     }
 }
 
-.off-canvas-sidebar{
-    .navigation {
-        > li > a,
-        > li > a:hover{
-            color: $white;
-        }
-
-        > li > a:focus{
-            background: rgba(200, 200, 200, 0.2);
-        }
-    }
-}
-
-
+// Content Area
 .main-panel{
     position: relative;
     z-index: 2;
     float: right;
-    // overflow: auto;
     min-height: 100%;
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
     @include transform-translate-x(0px);
     @include transition (0.33s, cubic-bezier(0.685, 0.0473, 0.346, 1));
 
@@ -624,21 +678,20 @@
         margin-bottom: 0;
     }
 }
+
+// Navigation
 .bootstrap-navbar .navigation{
     margin-top: 20px;
     float: none;
 }
-.main-panel{
-    max-height: 100%;
-    height: 100%;
-    width: 100%;
-}
+
+// Small sidebar menu
 .sidebar-sm{
     .app-sidebar{
         width: 220px;
     }
 }
-
+//  Large sidebar menu
 .sidebar-lg{
     .app-sidebar{
         width: 280px;

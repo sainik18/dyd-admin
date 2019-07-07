@@ -1,3 +1,4 @@
+// Minimum width 992px
 @media (min-width: 992px) {
 	.main-panel{
 		.main-content{
@@ -51,6 +52,7 @@
   }
 }
 
+// Maximum width 992px
 @media (max-width: 992px) {
   .app-sidebar{
     transition: transform .4s cubic-bezier(.25,.8,.25,1);
@@ -133,6 +135,7 @@
   }
 }
 
+// Minimum width 320px
 @media (min-width: 320px) {
   .navbar-header{
     float: left;
@@ -146,12 +149,14 @@
   }
 }
 
+// Maximum width 320px
 @media (max-width: 320px) {
   .navbar-right{
     display: none;
   }
 }
 
+// Maximum width 640px
 @media (max-width: 640px) {
   .navbar-form{
     display: none;

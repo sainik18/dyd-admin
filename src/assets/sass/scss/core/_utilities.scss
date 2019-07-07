@@ -10,6 +10,7 @@
   margin-left:  auto !important;
 }
 
+// anchor
 a{
   cursor: pointer;
 }
@@ -24,25 +25,35 @@ a{
     }
 }
 
+// Round shape
 .round{
   border-radius: 1.5rem;
 }
+
+// Square shape
 .square{
   border-radius: 0;
 }
+
+// Image
 img{
   &.img-border{
     border: 5px solid #fff;
   }
 }
+
+// List
 ul{
   &.no-list-style{
     list-style: none;
   }
 }
+
+// Gradient
 [class*='gradient-']{
   background-repeat: repeat !important;
 }
+
 // Shadow classes
 .shadow-z-1{
   @include shadow-z-1();
@@ -81,4 +92,9 @@ ul{
     background-color: rgba(0, 0, 0, 0.18);
     padding: 8px;
     border-radius: 50%;
+}
+.gradient-bg{
+  height: 100%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }

@@ -1,12 +1,15 @@
+// Navbar
 .navbar {
   z-index: 3; // required to make the shadow overlap the below content (need is visible in mobile drawer overlay)
   border: 0;
   border-radius: 0;
 
+  // Branding
   .navbar-brand {
     position: relative;
   }
 
+  // Navigation
   .navbar-nav{
     display: block;
     margin-right: -18px;
@@ -15,6 +18,7 @@
     }
   }
 
+  // Navbar toggle button
   .navbar-toggle{
     background-color: transparent;
     border: none;
@@ -28,12 +32,14 @@
     }
   }
 
+  // Notification drawer position
   .notification{
     position: absolute;
     top:-1px;
     right:13px;
   }
 
+  // User avatar
   .dropdown-user-link{
     .avatar{
       width: 36px;

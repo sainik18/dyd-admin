@@ -1,9 +1,14 @@
+// HTML
 html{
   width: 100%;
 }
+
+// HR
 hr{
   border-color: #a8a8a8;
 }
+
+// Unorder List
 ul.list-inline{
   i{
     line-height: 18px;
@@ -19,7 +24,7 @@ ul.list-inline{
   }
 }
 
-
+// Animation
 .circular {
   animation: rotate 2s linear infinite;
   height: 100%;
@@ -33,6 +38,7 @@ ul.list-inline{
   margin: auto;
 }
 
+// path
 .path {
   stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;
@@ -40,6 +46,7 @@ ul.list-inline{
   stroke-linecap: round;
 }
 
+// Keyframes
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
@@ -109,6 +116,8 @@ select::-moz-focus-inner,
 input[type="file"] > input[type="button"]::-moz-focus-inner {
     outline : 0 !important;
 }
+
+// Borderless table
 .table-borderless{
   tbody{
     tr{
@@ -119,13 +128,17 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   }
 }
 
-
+// data time
 datetime .form-group{
   margin: 0
 }
+
+// Round button
 .btn-round{
   border-radius: $border-radius-extreme;
 }
+
+// Fonticon container
 .fonticon-container{
 	> .fonticon-wrap{
 		float: left;
@@ -167,11 +180,13 @@ datetime .form-group{
 	}
 }
 
+// Language image
 .langimg{
   width: 30px;
   margin-right: 5px;
 }
 
+// Notification dropdown
 .notification-dropdown{
   .noti-list{
     position: relative;
@@ -201,6 +216,7 @@ datetime .form-group{
   }
 }
 
+// Navigation item
 .nav-item{
   a{
     &#search{
@@ -245,10 +261,12 @@ datetime .form-group{
   }
 }
 
+// Drag & drop container
 .dragdrop-container{
   min-height: 200px;
 }
 
+// Content overlay
 .content-overlay{
   top: 0;
   left: 0;
@@ -264,6 +282,7 @@ datetime .form-group{
   }
 }
 
+// Avatar
 .avatar {
   display: inline-block;
   position: relative;
@@ -279,4 +298,29 @@ datetime .form-group{
     border: 0;
     border-radius: 1000px;
   }
+}
+
+//faq
+
+#faq {
+  .card {
+    .card-header {
+        padding: 0rem;
+        padding-top: .5rem;
+    }
+  }
+
+  ngb-accordion {
+    .card {
+      border-bottom: 2px solid #f5f7fa;
+    }
+  }
+
+  .btn-link {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  
 }

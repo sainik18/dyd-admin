@@ -5,6 +5,7 @@ $bs-height-lg:   (floor($font-size-lg * $line-height-base) + $padding-large-vert
 $bs-height-sm:   (floor($font-size-sm * 1.5) + $padding-small-vertical * 2) !default;
 $bs-height-xs:   (floor($font-size-sm * 1.2) + $padding-small-vertical + 1) !default;
 
+// Social button
 .btn-social {
   position: relative;
   padding-left: ($bs-height-base + $padding-base-horizontal);

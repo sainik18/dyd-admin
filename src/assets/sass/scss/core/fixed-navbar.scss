@@ -1,3 +1,4 @@
+// Navbar
 .navbar{
 	position: fixed;
     top: 0;
@@ -14,13 +15,17 @@
 	}
 }
 
+// Sidebar z-index
 .app-sidebar{
 	z-index: 5;
 }
 
+// main pannel top margin
 .main-panel{
 	margin-top: 85px;
 }
+
+
 .navbar{
 	.show {
 	    >.dropdown-menu {

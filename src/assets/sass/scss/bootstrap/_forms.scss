@@ -1,4 +1,5 @@
 form{
+    // Form label
     label{
         color: #75787d;
         font-size: 0.75rem;
@@ -6,13 +7,18 @@ form{
         letter-spacing: 2px;
         font-weight: 500;
     }
+
+    // Label focus
     .labelfocus{
         color: #000;
     }
+
+    // form group
     .form-group{
         margin-bottom: 1.5rem;
     }
 
+    // form control
     .form-control{
         border: 1px solid #A6A9AE;
         color: #75787d;
@@ -37,6 +43,8 @@ form{
             border-color: #000;
         }
     }
+
+    // form control positioning
     .form-control-position{
         position: absolute;
         top: 2px;
@@ -48,6 +56,8 @@ form{
         line-height: 2.5rem;
         text-align: center;
     }
+
+    // form control left side icon
     .has-icon-left{
         .form-control-position{
             right: auto;
@@ -58,11 +68,15 @@ form{
             padding-left: 2.95rem;
         }
     }
+
+    // form control right side icon
     .has-icon-right{
         .form-control{
             padding-right: 2.5rem;
         }
     }
+
+    // form section
     .form-section{
         color: theme-color('dark');
         line-height: 3rem;
@@ -79,10 +93,7 @@ form{
         }
     }
 
-    /* .form-body{
-        overflow: hidden;
-    } */
-
+    // Form actions
     .form-actions{
         border-top: 1px solid darken($body-bg, 10%);
         padding: 20px 0;
@@ -113,6 +124,7 @@ form{
         }
     }
 
+    // Horizontal form
     &.form-horizontal{
         .form-group{
             @include media-breakpoint-up(sm) {
@@ -123,6 +135,7 @@ form{
         }
     }
 
+    // Row separator
     &.row-separator{
         .form-group{
             margin: 0;
@@ -140,6 +153,7 @@ form{
         }
     }
 
+    // Bordered Form
     &.form-bordered{
         .form-group{
             margin: 0;
@@ -158,6 +172,7 @@ form{
         }
     }
 
+    // Striped Rows
     &.striped-rows{
         .form-group{
             margin: 0;
@@ -177,6 +192,7 @@ form{
         }
     }
 
+    // Striped Labels
     &.striped-labels{
         .form-group{
             margin: 0;
@@ -198,15 +214,13 @@ form{
     }
 }
 
+// select form control
 select.form-control {
 	padding-top: 0 !important;
 	padding-bottom: 0 !important;
 }
 
 
-/* 
-TODO:M: To check with latest bootstrap version and remove it. 
-Bootstrap Enhance */
 // Custom checkbox
 .custom-control{
   display: block;

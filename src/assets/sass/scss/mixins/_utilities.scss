@@ -116,6 +116,19 @@
     }
   }
 }
+
+@mixin set-active-anchor-color($color){
+  .navigation{
+    > li.nav-collapsed-open{
+      > a{
+        color: $color;
+        i{
+            color: $color;
+        }
+      }
+    }
+  }
+}
 @mixin set-logo-text-color($color){
   .logo-text{
     color: $color;

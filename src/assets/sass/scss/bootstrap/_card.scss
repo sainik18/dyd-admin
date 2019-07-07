@@ -1,18 +1,20 @@
 //https://www.google.com/design/spec/components/cards.html#cards-content-blocks
 .card {
   border: 0;
-  margin: 18px 0;
+  margin: 15px 0;
   @include card-shadow();
   border-radius: $border-radius-base;
 
   @extend %std-font;
 
+  // gradient bg card
   &[class*="gradient-"]{
     .card-header, .card-footer{
           background-color: initial;
     }
   }
 
+  // Card header
   .card-header {
     padding: 1.5rem;
     border-bottom: none;
@@ -23,31 +25,40 @@
       border-left: 3px solid #e9ecef;
     }
   }
+
+  // Card sub title
   .card-subtitle{
     margin-top: 10px;
     margin-bottom: 10px;
   }
 
+  // card body
   .card-body{
     padding: 0;
     height: auto;
   }
 
+  // Card block
   .card-block {
     padding: 1rem 1.5rem 1.5rem;
   }
 
+  // Bordered Card
   .card-bordered {
     border: 1px solid rgba(0, 0, 0, 0.06);
   }
 
+  // Transparent Card
   &.card-transparent{
     background-color: transparent !important;
   }
 
+  // Remove card shadow from inner card
   .card{
     box-shadow: none;
   }
+
+  // Image card
   .card-img{
     position: relative;
     .card-title{
@@ -63,6 +74,7 @@
     }
   }
 
+  // Floating button
   .btn-floating{
     display: inline-block;
     color: #fff;
@@ -109,6 +121,7 @@
     }
   }
 
+  // Card reaveal
   .card-reveal{
     padding: 24px;
     position: absolute;
@@ -126,6 +139,7 @@
     }
   }
 
+  // Horizontal card
   &.horizontal{
     .card-body{
       display: -webkit-flex;
@@ -143,6 +157,8 @@
       }
     }
   }
+
+  // Stacked card
   .card-stacked{
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -166,6 +182,7 @@
     }
   }
 
+  // Card footer
   .card-footer {
     // assume footer is the set of actions?
     padding: 1rem 1.5rem;
@@ -173,38 +190,39 @@
     overflow: hidden;
   }
 
+  // Inverse Cards
   &.card-inverse{
-      .card-blockquote .blockquote-footer, .card-link, .card-subtitle, .card-text, .card-title, .card-footer,
-      a, a:hover,label, span, .form-group:hover,div,input{
-          color: #fff;
-      }
-      .form-group.is-focused {
-          .checkbox label, label.checkbox-inline,
-          .radio label, label.radio-inline {
-              color: #fff;
-          }
-      }
-      hr{
-          border-color: #fff;
-      }
+    .card-blockquote .blockquote-footer, .card-link, .card-subtitle, .card-text, .card-title, .card-footer,
+    a, a:hover,label, span, .form-group:hover,div,input{
+        color: #fff;
+    }
+    .form-group.is-focused {
+        .checkbox label, label.checkbox-inline,
+        .radio label, label.radio-inline {
+            color: #fff;
+        }
+    }
+    hr{
+        border-color: #fff;
+    }
 
-      .checkbox {
-        label{
-          color: #fff;
-          .checkbox-decorator {
-            .check{
-              border-color: rgba(255,255,255,0.54);
-            }
+    .checkbox {
+      label{
+        color: #fff;
+        .checkbox-decorator {
+          .check{
+            border-color: rgba(255,255,255,0.54);
           }
         }
       }
-      input{
-          &::-webkit-input-placeholder,
-          &::-moz-placeholder,
-          &:-ms-input-placeholder,
-          &:-moz-placeholder { 
-              color: #fff;
-          }
-      }
+    }
+    input{
+        &::-webkit-input-placeholder,
+        &::-moz-placeholder,
+        &:-ms-input-placeholder,
+        &:-moz-placeholder { 
+            color: #fff;
+        }
+    }
   }
 }
