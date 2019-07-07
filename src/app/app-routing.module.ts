@@ -18,6 +18,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewdevotionComponent } from './newdevotion/newdevotion.component';
 import { EditdevotionComponent } from './editdevotion/editdevotion.component';
+import { AuthResolver } from './auth.resolver';
 
 const appRoutes: Routes = [
   // {
@@ -40,45 +41,48 @@ const appRoutes: Routes = [
   {
     path: '',
     component: FullLayoutComponent,
-    data: { title: 'Login' },
+    data: { title: 'Dashboard' },
     children: [
       {
         path: '',
-        //loadChildren: './changelog/changelog.module#ChangeLogModule'
-        component: DashboardComponent
+        component: DashboardComponent,
+        resolve: { message: AuthResolver}
       },
       {
         path: 'newdevotion',
-        component: NewdevotionComponent
+        component: NewdevotionComponent,
+        resolve: { message: AuthResolver}
       },
       {
         path: 'editdevotion/:id',
-        component: EditdevotionComponent
+        component: EditdevotionComponent,
+        resolve: { message: AuthResolver}
       },
       {
         path: 'devotion',
-        //loadChildren: './changelog/changelog.module#ChangeLogModule'
-        component: DevotionsComponent
+        component: DevotionsComponent,
+        resolve: { message: AuthResolver}
       },
       {
         path: 'users',
-        component: UsersComponent
+        component: UsersComponent,
+        resolve: { message: AuthResolver}
       },
       {
         path: 'activity',
-        component: ActivityComponent
+        component: ActivityComponent,
+        resolve: { message: AuthResolver}
       },
       {
         path: 'settings',
-        component: SettingsComponent
+        component: SettingsComponent,
+        resolve: { message: AuthResolver}
       }
     ]
   },
   {
     path: '**',
     redirectTo: ''
-    //component: RegisterComponent,
-    //data: { title: 'content Views' }
   }
 
 ];

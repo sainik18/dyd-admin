@@ -10,7 +10,7 @@ const eml = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  errorMsg = '';
   loginForm = new FormGroup({
     email: new FormControl('', Validators.pattern(eml)),
     password: new FormControl('', Validators.compose([Validators.minLength(3)]))
@@ -27,7 +27,14 @@ export class LoginComponent implements OnInit {
         password: this.loginForm.get('password').value
     };
     this.userservice.login(logindata).subscribe( (data) => {
-      console.log(data);
+      if(data.status){
+        this.errorMsg = '';
+        localStorage.setItem('email', data.data[0].email);
+        this.router.navigate(['/'])
+
+      }else {
+        this.errorMsg = data.msg;
+      }
     });
     }
 

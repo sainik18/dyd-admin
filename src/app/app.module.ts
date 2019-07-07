@@ -27,6 +27,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewdevotionComponent } from './newdevotion/newdevotion.component';
 import { EditdevotionComponent } from './editdevotion/editdevotion.component';
 import { ChartistModule} from 'ng-chartist';
+import { AuthResolver } from './auth.resolver';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { ChartistModule} from 'ng-chartist';
         userService,
         { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
         SnotifyService,
+        AuthResolver
     ],
     bootstrap: [AppComponent]
 })
