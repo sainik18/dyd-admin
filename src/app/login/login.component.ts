@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       if(data.status){
         this.errorMsg = '';
         localStorage.setItem('email', data.data[0].email);
+        localStorage.setItem('lang', 'English');
         this.router.navigate(['/'])
 
       }else {

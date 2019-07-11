@@ -65,3 +65,113 @@
   </div>
 </div>
 <!--Statistics cards Ends-->
+<!--Line with Area Chart 1 Starts-->
+<div class="row">
+  <div class="col-xl-8 col-lg-12 col-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title-wrap bar-success">
+          <div class="row">
+          <div class="col-md-6">
+            <h4 class="card-title">Today's Devotion</h4>
+          </div>
+          <div class="col-md-6 text-right">
+              <span class="card-title text-right font-bold">Language: {{selectedLang}}</span>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-block">
+          <div id="line-chart" class="height-300 lineChart" style="overflow-y: auto" *ngIf="todayDevotion.length > 0">
+            <h6 class="font-500">Topic: {{todayDevotion?.topic}}</h6>
+            
+            <h6 class="font-500">Bible Verse: </h6>
+            <p>{{todayDevotion?.bible_verse}}</p>
+            
+            <h6 class="font-500">Devotion: </h6>
+            <p>{{todayDevotion?.devotion}}</p>
+            
+            <h6 class="font-500">Prayer: </h6>
+            <p>{{todayDevotion?.prayer}}</p>
+            
+            <h6 class="font-500">Confession: </h6>
+            <p>{{todayDevotion?.confession}}</p>
+
+          </div>
+
+          <div id="line-chart" class="height-300 lineChart" style="overflow-y: auto" *ngIf="todayDevotion.length == 0">
+            <h3 class="text-center">No devotions for today</h3>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 col-lg-12 col-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title-wrap bar-danger">
+          <h4 class="card-title">Today's Activity</h4>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="col-12 timeline-left" id="activity">
+          <div class="timeline">
+            <ul class="list-unstyled base-timeline activity-timeline">
+              <li class="">
+                <div class="timeline-icon bg-danger">
+                  <i class="fa fa-tasks"></i>
+                </div>
+                <div class="act-time">Today</div>
+                <div class="base-timeline-info">
+                  <a href="#" class="text-uppercase text-danger">Task Added</a>
+                </div>
+                <small class="text-muted">
+                                    25 mins ago
+                                </small>
+              </li>
+              <li class="">
+                <div class="timeline-icon bg-primary">
+                  <i class="fa fa-handshake-o"></i>
+                </div>
+                <div class="act-time">Yesterday</div>
+                <div class="base-timeline-info">
+                  <a href="#" class="text-uppercase text-primary">Deal Added</a>
+                </div>
+                <small class="text-muted">
+                                    23 hours ago
+                                </small>
+              </li>
+              <li class="">
+                <div class="timeline-icon bg-dark">
+                  <i class="fa fa-tasks"></i>
+                </div>
+                <div class="act-time">09 March</div>
+                <div class="base-timeline-info">
+                  <a href="#" class="text-uppercase text-dark">Task Updated</a>
+                </div>
+                <small class="text-muted">
+                                    15 days ago
+                                </small>
+              </li>
+              <li class="">
+                <div class="timeline-icon bg-warning">
+                  <i class="fa fa-handshake-o"></i>
+                </div>
+                <div class="act-time">04 March</div>
+                <div class="base-timeline-info">
+                  <a href="#" class="text-uppercase text-warning">Started Task</a>
+                </div>
+                <small class="text-muted">
+                                    20 days ago
+                                </small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Line with Area Chart 1 Ends-->

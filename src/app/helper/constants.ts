@@ -3,5 +3,6 @@ export const APP_CONSTANTS = {
     getDevotions: 'https://dyd-njs.herokuapp.com/getDevotions',
     insertDevotions: 'https://dyd-njs.herokuapp.com/insertDevotions',
     getDevotionById: 'https://dyd-njs.herokuapp.com/getDevotionById',
+    getDevotionByDate: 'https://dyd-njs.herokuapp.com/getDevotionByDate',
     updateDevotionById: 'https://dyd-njs.herokuapp.com/updateDevotion',
 }

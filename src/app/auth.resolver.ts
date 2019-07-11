@@ -12,7 +12,6 @@ export class AuthResolver implements Resolve<Observable<string>> {
   
     resolve() {
         let loggedin = false;
-        console.log(localStorage.getItem('email'))
         if(localStorage.getItem('email')){
             loggedin = true;
         }else {

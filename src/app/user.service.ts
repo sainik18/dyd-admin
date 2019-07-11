@@ -21,6 +21,9 @@ export class userService {
     getDevotionById(data): Observable<any> {
         return this.http.post(APP_CONSTANTS.getDevotionById, data);
     }
+    getDevotionByDate(data): Observable<any> {
+        return this.http.post(APP_CONSTANTS.getDevotionByDate, data);
+    }
     updateDevotionById(data): Observable<any> {
         return this.http.post(APP_CONSTANTS.updateDevotionById, data);
     }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
 import { ChartType, ChartEvent } from "ng-chartist";
+import { userService } from 'app/user.service';
 
 declare var require: any;
 const data: any = require('../shared/data/chartist.json');
@@ -19,10 +20,28 @@ export interface Chart {
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+    
+  todayDevotion = [];
+  selectedLang = localStorage.getItem('lang');
 
-  constructor() { }
+  constructor(private userservice: userService) { }
 
   ngOnInit() {
+    let nowDate = new Date(); 
+    //let date = '2019-01-01';
+    let date = nowDate.getFullYear()+'-'+(nowDate.getMonth()+1)+'-'+nowDate.getDate();
+
+      let params = {
+        quote_date: date,
+        lang: localStorage.getItem('lang')
+      }
+      this.userservice.getDevotionByDate(params).subscribe(data => {
+          if(data.status){
+              this.todayDevotion = data.data[0];
+          }
+
+          console.log(this.todayDevotion);
+      })
   }
 
   // Widget Area chart 1 configuration Starts
