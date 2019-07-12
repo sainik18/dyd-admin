@@ -83,7 +83,7 @@
       </div>
       <div class="card-body">
         <div class="card-block">
-          <div id="line-chart" class="height-300 lineChart" style="overflow-y: auto" *ngIf="todayDevotion.length > 0">
+          <div id="line-chart" class="height-300 lineChart" style="overflow-y: auto" *ngIf="(todayDevotion?.topic && todayDevotion?.topic != '')">
             <h6 class="font-500">Topic: {{todayDevotion?.topic}}</h6>
             
             <h6 class="font-500">Bible Verse: </h6>
@@ -112,7 +112,7 @@
     <div class="card">
       <div class="card-header">
         <div class="card-title-wrap bar-danger">
-          <h4 class="card-title">Today's Activity</h4>
+          <h4 class="card-title">Past Devotions</h4>
         </div>
       </div>
       <div class="card-body">
@@ -123,49 +123,41 @@
                 <div class="timeline-icon bg-danger">
                   <i class="fa fa-tasks"></i>
                 </div>
-                <div class="act-time">Today</div>
+                <div class="act-time">{{pastDevotions[0]?.date}}</div>
                 <div class="base-timeline-info">
-                  <a href="#" class="text-uppercase text-danger">Task Added</a>
+                  <a href="#" class="text-uppercase text-danger">{{(pastDevotions[0]?.title.length > 15)? (pastDevotions[0]?.title | slice:0:15)+'...': pastDevotions[0]?.title }}</a>
                 </div>
-                <small class="text-muted">
-                                    25 mins ago
-                                </small>
+                <small class="text-muted" (click)="viewDevotion(pastDevotions[0]?._id)">View</small>
               </li>
               <li class="">
                 <div class="timeline-icon bg-primary">
                   <i class="fa fa-handshake-o"></i>
                 </div>
-                <div class="act-time">Yesterday</div>
+                <div class="act-time">{{pastDevotions[1]?.date}}</div>
                 <div class="base-timeline-info">
-                  <a href="#" class="text-uppercase text-primary">Deal Added</a>
+                  <a href="#" class="text-uppercase text-primary">{{(pastDevotions[1]?.title.length > 15)? (pastDevotions[1]?.title | slice:0:15)+'...': pastDevotions[1]?.title }}</a>
                 </div>
-                <small class="text-muted">
-                                    23 hours ago
-                                </small>
+                <small class="text-muted" (click)="viewDevotion(pastDevotions[1]?._id)">View</small>
               </li>
               <li class="">
                 <div class="timeline-icon bg-dark">
                   <i class="fa fa-tasks"></i>
                 </div>
-                <div class="act-time">09 March</div>
+                <div class="act-time">{{pastDevotions[2]?.date}}</div>
                 <div class="base-timeline-info">
-                  <a href="#" class="text-uppercase text-dark">Task Updated</a>
+                  <a href="#" class="text-uppercase text-dark">{{(pastDevotions[2]?.title.length > 15)? (pastDevotions[2]?.title | slice:0:15)+'...': pastDevotions[2]?.title }}</a>
                 </div>
-                <small class="text-muted">
-                                    15 days ago
-                                </small>
+                <small class="text-muted" (click)="viewDevotion(pastDevotions[2]?._id)">View</small>
               </li>
               <li class="">
                 <div class="timeline-icon bg-warning">
                   <i class="fa fa-handshake-o"></i>
                 </div>
-                <div class="act-time">04 March</div>
+                <div class="act-time">{{pastDevotions[3]?.date}}</div>
                 <div class="base-timeline-info">
-                  <a href="#" class="text-uppercase text-warning">Started Task</a>
+                  <a href="#" class="text-uppercase text-warning">{{(pastDevotions[3]?.title.length > 15)? (pastDevotions[3]?.title | slice:0:15)+'...': pastDevotions[3]?.title }}</a>
                 </div>
-                <small class="text-muted">
-                                    20 days ago
-                                </small>
+                <small class="text-muted" (click)="viewDevotion(pastDevotions[3]?._id)">View</small>
               </li>
             </ul>
           </div>

@@ -23,6 +23,8 @@ export class DashboardComponent implements OnInit {
     
   todayDevotion = [];
   selectedLang = localStorage.getItem('lang');
+  devData = [];
+  pastDevotions = [];
 
   constructor(private userservice: userService) { }
 
@@ -39,9 +41,48 @@ export class DashboardComponent implements OnInit {
           if(data.status){
               this.todayDevotion = data.data[0];
           }
+      });
 
-          console.log(this.todayDevotion);
+      this.getDevotions();
+  }
+
+  getDevotions(){
+    let weeks = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    let nowDate = new Date(); 
+    let today = nowDate.getFullYear()+'-'+(nowDate.getMonth()+1)+'-'+nowDate.getDate();
+    let yesterday = nowDate.getFullYear()+'-'+(nowDate.getMonth()+1)+'-'+nowDate.getDate();
+    let showDate = nowDate.getDate()+' '+weeks[nowDate.getMonth()+1];
+    let params = {
+        lang: localStorage.getItem('lang')
+      }
+  
+      this.userservice.getdevotions(params).subscribe( (data) => {
+        if(data.status){
+          this.devData = data.data;
+
+          for(let i = 0; i < this.devData.length; i++){
+              let tempDate = '';
+              if(today == this.devData[i].quote_date){
+                  tempDate = 'Today';
+              }else if (yesterday == this.devData[i].quote_date){
+                tempDate = 'Yesterday';
+              }else {
+                  tempDate = showDate;
+              }
+              this.pastDevotions.push({date: tempDate, title: this.devData[i].topic, _id: this.devData[i]._id });
+
+              if(i == 3){
+                  break;
+              }
+          }
+        }
+        
       })
+  }
+
+  viewDevotion(_id){
+    let todayDevotion = this.devData.filter( ddata => ddata._id == _id);
+    this.todayDevotion = todayDevotion[0];
   }
 
   // Widget Area chart 1 configuration Starts
