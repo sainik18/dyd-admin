@@ -21,7 +21,7 @@ export interface Chart {
 })
 export class DashboardComponent implements OnInit {
     
-  todayDevotion = [];
+  todayDevotion: any;
   selectedLang = localStorage.getItem('lang');
   devData = [];
   pastDevotions = [];
@@ -37,7 +37,7 @@ export class DashboardComponent implements OnInit {
         quote_date: date,
         lang: localStorage.getItem('lang')
       }
-      this.userservice.getDevotionByDate(params).subscribe(data => {
+      this.userservice.getDevotionByDate(params).subscribe( (data: any) => {
           if(data.status){
               this.todayDevotion = data.data[0];
           }

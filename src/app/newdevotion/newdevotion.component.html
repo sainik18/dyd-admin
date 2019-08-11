@@ -13,7 +13,7 @@
                   <div class="row">
                       <div class="col-md-6">
                           <div class="form-group">
-                            <label for="projectinput5" [ngClass]="{'red':devotionForm.hasError('minlength','lang')}">Select Language</label>
+                            <label for="projectinput5" [ngClass]="{'red':devotionForm.controls['lang'].errors?.minlength}">Select Language</label>
                             <select name="interested" class="form-control" required formControlName="lang">
                                 <option value="" selected="" disabled="">Select Language</option>
                               <option value="English">English</option>
@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                              <label for="issueinput3" [ngClass]="{'red':devotionForm.hasError('minlength','quote_date')}">Post Date</label>
+                              <label for="issueinput3" [ngClass]="{'red':devotionForm.controls['quote_date'].errors?.minlength}">Post Date</label>
                               <input type="date" class="form-control" name="postDate" data-toggle="tooltip" data-trigger="hover" data-placement="top"
                                data-title="Date Opened" required formControlName="quote_date">
                             </div>
@@ -37,13 +37,13 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="projectinput1" [ngClass]="{'red':devotionForm.hasError('minlength','topic')}">Topic</label>
+                        <label for="projectinput1" [ngClass]="{'red':devotionForm.controls['topic'].errors?.minlength}">Topic</label>
                         <input type="text" class="form-control" name="topic" required formControlName="topic">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="projectinput2" [ngClass]="{'red':devotionForm.hasError('minlength','bible_verse')}">Bible Verse</label>
+                        <label for="projectinput2" [ngClass]="{'red':devotionForm.controls['bible_verse'].errors?.minlength}">Bible Verse</label>
                         <input type="text" class="form-control" name="bibleVerse" required formControlName="bible_verse">
                       </div>
                     </div>
@@ -51,7 +51,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                          <label for="projectinput8" [ngClass]="{'red':devotionForm.hasError('minlength','devotion')}">Write Devotion Here</label>
+                          <label for="projectinput8" [ngClass]="{'red':devotionForm.controls['devotion'].errors?.minlength}">Write Devotion Here</label>
                           <textarea rows="5" class="form-control" name="devotion" required formControlName="devotion"></textarea>
                       </div>
                     </div>
@@ -60,7 +60,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                          <label for="projectinput8" [ngClass]="{'red':devotionForm.hasError('minlength','prayer')}">Write Prayer Here</label>
+                          <label for="projectinput8" [ngClass]="{'red':devotionForm.controls['prayer'].errors?.minlength}">Write Prayer Here</label>
                           <textarea rows="5" class="form-control" name="prayer" required formControlName="prayer"></textarea>
                       </div>
                     </div>
@@ -69,7 +69,7 @@
                   <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                            <label for="projectinput8" [ngClass]="{'red':devotionForm.hasError('minlength','confession')}">Write Confession Here</label>
+                            <label for="projectinput8" [ngClass]="{'red':devotionForm.controls['confession'].errors?.minlength}">Write Confession Here</label>
                             <textarea rows="5" class="form-control" name="confession" required formControlName="confession"></textarea>
                         </div>
                       </div>
