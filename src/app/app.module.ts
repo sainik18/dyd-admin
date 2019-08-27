@@ -28,6 +28,7 @@ import { NewdevotionComponent } from './newdevotion/newdevotion.component';
 import { EditdevotionComponent } from './editdevotion/editdevotion.component';
 import { ChartistModule} from 'ng-chartist';
 import { AuthResolver } from './auth.resolver';
+import { TestimoniesComponent } from './testimonies/testimonies.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { AuthResolver } from './auth.resolver';
         ActivityComponent,
         DashboardComponent,
         NewdevotionComponent,
-        EditdevotionComponent
+        EditdevotionComponent,
+        TestimoniesComponent
     ],
     imports: [
         BrowserAnimationsModule,

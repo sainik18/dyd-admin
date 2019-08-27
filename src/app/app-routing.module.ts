@@ -19,6 +19,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewdevotionComponent } from './newdevotion/newdevotion.component';
 import { EditdevotionComponent } from './editdevotion/editdevotion.component';
 import { AuthResolver } from './auth.resolver';
+import { TestimoniesComponent } from './testimonies/testimonies.component';
 
 const appRoutes: Routes = [
   // {
@@ -61,6 +62,11 @@ const appRoutes: Routes = [
       {
         path: 'devotion',
         component: DevotionsComponent,
+        resolve: { message: AuthResolver}
+      },
+      {
+        path: 'testimonies',
+        component: TestimoniesComponent,
         resolve: { message: AuthResolver}
       },
       {

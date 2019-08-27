@@ -12,6 +12,9 @@ export const ROUTES: RouteInfo[] = [
         path: '/devotion', title: 'Devotion', icon: 'icon-notebook', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
     },
     {
+        path: '/testimonies', title: 'Testimonies', icon: 'icon-social-tumblr', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+    },
+    {
         path: '/users', title: 'Users', icon: 'icon-user', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
     },
     {

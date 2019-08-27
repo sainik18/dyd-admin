@@ -5,4 +5,5 @@ export const APP_CONSTANTS = {
     getDevotionById: 'https://dyd-njs.herokuapp.com/getDevotionById',
     getDevotionByDate: 'https://dyd-njs.herokuapp.com/getDevotionByDate',
     updateDevotionById: 'https://dyd-njs.herokuapp.com/updateDevotion',
+    updateTestimonies: 'https://dyd-njs.herokuapp.com/updateTestimonies',
 }
