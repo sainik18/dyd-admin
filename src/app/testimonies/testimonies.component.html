@@ -48,7 +48,7 @@
                       <div class="form-group">
                         <label for="issueinput3">Video Link2</label>
                         <input type="text" class="form-control" name="videolink2" data-toggle="tooltip" data-trigger="hover"
-                          data-placement="top" data-title="Video Link 1" required formControlName="videolink1">
+                          data-placement="top" data-title="Video Link 1" required formControlName="videolink2">
                       </div>
                     </div>
   
@@ -96,6 +96,11 @@
                     </div>
 
 
+              </div>
+              <div class="form-actions text-center">
+                <button type="submit" class="btn btn-raised btn-primary" [disabled]="!testimoniesForm.valid">
+                   Update
+                </button>
               </div>
             </form>
           </div>

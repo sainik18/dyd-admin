@@ -30,4 +30,7 @@ export class userService {
     updateTestimonies(data): Observable<any> {
         return this.http.post(APP_CONSTANTS.updateTestimonies, data);
     }
+    getTestimonies(): Observable<any> {
+        return this.http.post(APP_CONSTANTS.getTestimonies, {});
+    }
 }

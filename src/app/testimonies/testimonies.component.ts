@@ -44,12 +44,17 @@ export class TestimoniesComponent implements OnInit {
   constructor(private snotifyService: SnotifyService, private userservice: userService) { }
 
   ngOnInit() {
+    this.userservice.getTestimonies().subscribe((data) => {
+      console.log(data);
+      this.testimoniesForm.patchValue(data.data[0]);
+    })
   }
   
   onTestimoniesSubmit(){
-    this.userservice.updateTestimonies(this.testimoniesForm.value).subscribe( data => {
+    this.userservice.updateTestimonies(this.testimoniesForm.value).subscribe( (data) => {
       let body = data.msg;
       let title = '';
+      console.log(data);
       if(data.status){
         this.snotifyService.info(body, title, this.getConfig());
       }else {
