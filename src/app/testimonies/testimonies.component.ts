@@ -10,16 +10,27 @@ import { userService } from 'app/user.service';
 })
 export class TestimoniesComponent implements OnInit {
 
+  imageSrc: string = '';
+  thumb: string = '';
+  selectedFile: File = null;
+  fd = new FormData();
+
   public testimoniesForm = new FormGroup({
     videolink1: new FormControl('', Validators.compose([Validators.minLength(1)])),
     title1: new FormControl('', Validators.compose([Validators.minLength(1)])),
     readmore1: new FormControl('', Validators.compose([Validators.minLength(1)])),
+    date1: new FormControl('', Validators.compose([Validators.minLength(1)])),
+    thumbnail1: new FormControl('', Validators.compose([Validators.minLength(1)])),
     videolink2: new FormControl('', Validators.compose([Validators.minLength(1)])),
     title2: new FormControl('', Validators.compose([Validators.minLength(1)])),
     readmore2: new FormControl('', Validators.compose([Validators.minLength(1)])),
+    date2: new FormControl('', Validators.compose([Validators.minLength(1)])),
+    thumbnail2: new FormControl('', Validators.compose([Validators.minLength(1)])),
     videolink3: new FormControl('', Validators.compose([Validators.minLength(1)])),
     title3: new FormControl('', Validators.compose([Validators.minLength(1)])),
     readmore3: new FormControl('', Validators.compose([Validators.minLength(1)])),
+    date3: new FormControl('', Validators.compose([Validators.minLength(1)])),
+    thumbnail3: new FormControl('', Validators.compose([Validators.minLength(1)]))
   });
 
   getConfig(): SnotifyToastConfig {
@@ -54,7 +65,6 @@ export class TestimoniesComponent implements OnInit {
     this.userservice.updateTestimonies(this.testimoniesForm.value).subscribe( (data) => {
       let body = data.msg;
       let title = '';
-      console.log(data);
       if(data.status){
         this.snotifyService.info(body, title, this.getConfig());
       }else {
@@ -63,5 +73,39 @@ export class TestimoniesComponent implements OnInit {
       
     })
   }
+
+  uploadImage(event, type){
+    this.selectedFile = <File>event.target.files[0];
+    this.fd.append('file', this.selectedFile, this.selectedFile.name);
+    this.userservice.uploadImage(this.fd).subscribe( (data) => {
+      console.log(data);
+    })
+  }
+
+  handleInputChange(e, thumb) {
+    console.log("input change");
+    this.thumb = thumb;
+    console.log(this.thumb);
+    var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+
+    var pattern = /image-*/;
+    var reader = new FileReader();
+
+    if (!file.type.match(pattern)) {
+        alert('invalid format');
+        return;
+    }
+
+    reader.onload = this._handleReaderLoaded.bind(this);
+    reader.readAsDataURL(file);
+}
+
+_handleReaderLoaded(e) {
+  console.log("_handleReaderLoaded")
+ var reader = e.target;
+ this.imageSrc = reader.result;
+ this.testimoniesForm.controls[this.thumb].setValue(this.imageSrc);
+ console.log(this.imageSrc);
+}
 
 }

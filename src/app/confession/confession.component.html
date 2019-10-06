@@ -1,0 +1,73 @@
+<div class="row">
+</div>
+<section id="extended">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-wrap bar-success">
+            <h4 class="card-title">Update Confession</h4>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="px-3">
+            <form class="form" [formGroup]="confessionForm" (ngSubmit)="onConfessionSubmit()">
+              <div class="form-body">
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="issueinput3">Video Link</label>
+                      <input type="text" class="form-control" name="videolink1" data-toggle="tooltip" data-trigger="hover"
+                        data-placement="top" data-title="Video Link" required formControlName="videolink">
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="issueinput3">Name</label>
+                        <input type="text" class="form-control" name="name" data-toggle="tooltip" data-trigger="hover"
+                          data-placement="top" data-title="name" required formControlName="name">
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="issueinput3">Title</label>
+                        <input type="text" class="form-control" name="title" data-toggle="tooltip" data-trigger="hover"
+                          data-placement="top" data-title="title" required formControlName="title">
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="issueinput3">Description</label>
+                        <input type="text" class="form-control" name="title" data-toggle="tooltip" data-trigger="hover"
+                          data-placement="top" data-title="description" required formControlName="description">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <fieldset class="form-group">
+                        <label for="file">Upload thumbnail</label>
+                        <div class="custom-file center-block d-block">
+                          <input type="file" accept="image/*" (change)="handleInputChange($event)" class="custom-file-input" >
+                          <label class="custom-file-label" for="inputGroupFile01">Choose Image</label>
+                          </div>
+                      </fieldset>
+                    </div>
+
+                </div>
+
+              </div>
+              <div class="form-actions text-center">
+                <button type="submit" class="btn btn-raised btn-primary" [disabled]="!confessionForm.valid">
+                   Update
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

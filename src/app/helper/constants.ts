@@ -1,10 +1,13 @@
 export const APP_CONSTANTS = {
-    login_admin: 'https://dyd-njs.herokuapp.com/adminLogin',
-    getDevotions: 'https://dyd-njs.herokuapp.com/getDevotions',
-    insertDevotions: 'https://dyd-njs.herokuapp.com/insertDevotions',
-    getDevotionById: 'https://dyd-njs.herokuapp.com/getDevotionById',
-    getDevotionByDate: 'https://dyd-njs.herokuapp.com/getDevotionByDate',
-    updateDevotionById: 'https://dyd-njs.herokuapp.com/updateDevotion',
-    updateTestimonies: 'https://dyd-njs.herokuapp.com/updateTestimonies',
-    getTestimonies: 'https://dyd-njs.herokuapp.com/getTestimonies',
+    login_admin: 'http://67.205.149.51:3000/adminLogin',
+    getDevotions: 'http://67.205.149.51:3000/getDevotions',
+    insertDevotions: 'http://67.205.149.51:3000/insertDevotions',
+    getDevotionById: 'http://67.205.149.51:3000/getDevotionById',
+    getDevotionByDate: 'http://67.205.149.51:3000/getDevotionByDate',
+    updateDevotionById: 'http://67.205.149.51:3000/updateDevotion',
+    updateTestimonies: 'http://67.205.149.51:3000/updateTestimonies',
+    getTestimonies: 'http://67.205.149.51:3000/getTestimonies',
+    updateConfession: 'http://67.205.149.51:3000/updateConfession',
+    getConfession: 'http://67.205.149.51:3000/getConfession',
+    uploadImage: 'http://localhost:3000/uploadImage'
 }

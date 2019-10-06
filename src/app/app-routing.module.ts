@@ -20,6 +20,7 @@ import { NewdevotionComponent } from './newdevotion/newdevotion.component';
 import { EditdevotionComponent } from './editdevotion/editdevotion.component';
 import { AuthResolver } from './auth.resolver';
 import { TestimoniesComponent } from './testimonies/testimonies.component';
+import { ConfessionComponent } from './confession/confession.component';
 
 const appRoutes: Routes = [
   // {
@@ -67,6 +68,11 @@ const appRoutes: Routes = [
       {
         path: 'testimonies',
         component: TestimoniesComponent,
+        resolve: { message: AuthResolver}
+      },
+      {
+        path: 'confession',
+        component: ConfessionComponent,
         resolve: { message: AuthResolver}
       },
       {

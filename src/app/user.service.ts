@@ -33,4 +33,13 @@ export class userService {
     getTestimonies(): Observable<any> {
         return this.http.post(APP_CONSTANTS.getTestimonies, {});
     }
+    updateConfession(data): Observable<any> {
+        return this.http.post(APP_CONSTANTS.updateConfession, data);
+    }
+    getConfession(): Observable<any> {
+        return this.http.post(APP_CONSTANTS.getConfession, {});
+    }
+    uploadImage(data): Observable<any> {
+        return this.http.post(APP_CONSTANTS.uploadImage, data);
+    }
 }

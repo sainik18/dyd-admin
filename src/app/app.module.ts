@@ -29,6 +29,7 @@ import { EditdevotionComponent } from './editdevotion/editdevotion.component';
 import { ChartistModule} from 'ng-chartist';
 import { AuthResolver } from './auth.resolver';
 import { TestimoniesComponent } from './testimonies/testimonies.component';
+import { ConfessionComponent } from './confession/confession.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { TestimoniesComponent } from './testimonies/testimonies.component';
         DashboardComponent,
         NewdevotionComponent,
         EditdevotionComponent,
-        TestimoniesComponent
+        TestimoniesComponent,
+        ConfessionComponent
     ],
     imports: [
         BrowserAnimationsModule,
