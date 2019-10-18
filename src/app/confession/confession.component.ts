@@ -12,6 +12,8 @@ export class ConfessionComponent implements OnInit {
 
   imageSrc: string = '';
   loaded: boolean = false;
+  selectedFile: File = null;
+  fd = new FormData();
   public confessionForm = new FormGroup({
     videolink: new FormControl('', Validators.compose([Validators.minLength(1)])),
     name: new FormControl('', Validators.compose([Validators.minLength(1)])),
@@ -63,29 +65,16 @@ export class ConfessionComponent implements OnInit {
     })
   }
 
-  handleInputChange(e) {
-    console.log("input change")
-    var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+  uploadImage(event, type){
+    this.selectedFile = <File>event.target.files[0];
+    this.fd.append('file', this.selectedFile, this.selectedFile.name);
+    this.userservice.uploadImage(this.fd).subscribe( (data) => {
+      this.fd.delete('file');
+      if(data.status){
+        this.confessionForm.controls[type].setValue(data.url);
+      }
 
-    var pattern = /image-*/;
-    var reader = new FileReader();
-
-    if (!file.type.match(pattern)) {
-        alert('invalid format');
-        return;
-    }
-
-    reader.onload = this._handleReaderLoaded.bind(this);
-    reader.readAsDataURL(file);
-}
-
-_handleReaderLoaded(e) {
-  console.log("_handleReaderLoaded")
- var reader = e.target;
- this.imageSrc = reader.result;
- this.confessionForm.controls['thumbnail'].setValue(this.imageSrc);
- console.log(this.imageSrc);
- this.loaded = true;
-}
+    })
+  }
 
 }

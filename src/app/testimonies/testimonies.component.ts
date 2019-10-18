@@ -78,7 +78,11 @@ export class TestimoniesComponent implements OnInit {
     this.selectedFile = <File>event.target.files[0];
     this.fd.append('file', this.selectedFile, this.selectedFile.name);
     this.userservice.uploadImage(this.fd).subscribe( (data) => {
-      console.log(data);
+      this.fd.delete('file');
+      if(data.status){
+        this.testimoniesForm.controls[type].setValue(data.url);
+      }
+
     })
   }
 

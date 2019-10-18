@@ -12,6 +12,7 @@ export class DevotionsComponent implements OnInit {
   data = [];
   modalData : any;
   language = localStorage.getItem('lang');
+  deleteId = '';
   constructor(private userservice: userService, private modalService: NgbModal) { }
 
   ngOnInit() {
@@ -30,8 +31,23 @@ export class DevotionsComponent implements OnInit {
 
   viewDevotion(content, _id){
     this.modalData = this.data.filter(row => row._id == _id);
-    console.log(this.modalData);
     this.modalService.open(content).result.then((result) => {
+  });
+  }
+
+  deleteDevotion(deleteModal, _id){
+    this.deleteId = _id;
+    this.modalService.open(deleteModal).result.then((result) => {
+      console.log(result);
+      this.data = this.data.filter( row => row._id != _id);
+      let params = {
+        _id : this.deleteId,
+        lang: localStorage.getItem('lang')
+
+      }
+      this.userservice.removeDevotionById(params).subscribe( (data) => {
+        console.log(data);
+      })
   });
   }
 
